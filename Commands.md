@@ -106,3 +106,62 @@ $   find . -type f -perm 777
 ```zsh
 $   find . -type f -name "*.txt" -exec rm -rf {} +
 ```
+
+## grep
+
+- `grep` means global regular expression print.
+- This command is case-sensitive.
+
+- To find a word in the file,
+
+```zsh
+$   grep "<word-here>" <file-name>
+```
+
+- To find exact word in the file,
+
+```zsh
+$   grep -w "<word-here>" <file-name>
+```
+
+- To make the search non case-sensitive,
+
+```zsh
+$   grep -i "<word-here>" <file-name>
+```
+
+- To find the line number of the given word (if exists) in the file,
+
+```zsh
+$   grep -n "<word-here>" <file-name>
+```
+
+- To show previous three lines that are before the given word (if exists) in the file,
+
+```zsh
+$   grep -B 3 "<word-here>" <file-name>
+```
+
+- To find the given word in current directory, run
+
+```zsh
+$   grep -win "<word-here>" ./*.txt 
+```
+
+- We can use recursive tag here to search in the directories inside the current directory
+
+```zsh
+$   grep -rwin "<word-here>" <file-name>
+```
+
+- To get the filenames which contain the given word, run
+
+```zsh
+$   grep -wirl "<word-here>" <file-name>
+```
+
+- To get the count of how many times the given word appears in a file in the directory,
+
+```zsh
+$   grep -wirc "<word-here>" <file-name>
+```
